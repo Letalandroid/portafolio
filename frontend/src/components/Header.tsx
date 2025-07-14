@@ -24,7 +24,7 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/90 backdrop-blur-sm border-b border-primary/30 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold text-glow">
-          &gt; LetalAndroid_
+          &gt; CJMM_
         </Link>
 
         {!isAdminRoute && (

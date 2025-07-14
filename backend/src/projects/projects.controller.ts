@@ -23,13 +23,6 @@ export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
 
   @Get()
-  @UseGuards(AuthGuard)
-  @ApiBearerAuth()
-  @ApiHeader({
-    name: 'Authorization',
-    description: 'Token JWT en formato Bearer',
-    required: true,
-  })
   @ApiOperation({ summary: 'Obtener la lista de proyectos' })
   @ApiResponse({ status: 200, description: 'Lista obtenida exitosamente' })
   @ApiResponse({ status: 401, description: 'Credenciales inválidas.' })

@@ -25,7 +25,7 @@ const AboutSection = () => {
               {t('about.greeting')}
             </h1>
             <h2 className="text-4xl md:text-6xl font-bold text-glow mb-4">
-              LetalAndroid
+              Carlos Morán Mauricio
             </h2>
             <h3 className="text-xl md:text-2xl text-primary border-l-2 border-primary pl-4 inline-block">
               {t('about.role')}
