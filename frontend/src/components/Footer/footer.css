@@ -1,0 +1,47 @@
+form {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  z-index: -100;
+}
+
+.submit {
+  background-color: #fc6915;
+  color: #fff;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+}
+
+form > .card {
+  width: 80% !important;
+  background-color: transparent;
+  color: #fff;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 20px 40px;
+  color: #fff;
+}
+
+.redes {
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.redes img {
+  width: 40px;
+}
+
+.linkedin {
+  background-color: #fff;
+  border-radius: 5px;
+}

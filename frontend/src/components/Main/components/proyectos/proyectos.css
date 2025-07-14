@@ -1,0 +1,63 @@
+.proyects-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 50px 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15% 0 0 15%;
+}
+
+.proyects-container h2 {
+  font-size: 3em;
+  text-align: center;
+  text-decoration: underline;
+  margin: 20px 0 40px 0;
+}
+
+.proyects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.proyect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20em;
+  border-radius: 10px;
+  margin: 20px;
+  color: #fff;
+  background-color: #333;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+.proyect h3 {
+  margin-top: 10px
+}
+
+.proyect p {
+  margin: 20px 0;
+}
+
+.proyect img {
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-site input, .btn-repo input {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.btn-repo input {
+  background-color: #666;
+}
