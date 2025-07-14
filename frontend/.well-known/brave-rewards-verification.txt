@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: letalandroid.online
-Token: 2bf29bdc5cd22dbf74186f0388c05beefdb2042ec370e8f133953bfcf93ca1b0

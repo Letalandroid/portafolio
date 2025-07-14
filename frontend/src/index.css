@@ -1,13 +1,99 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hacker theme colors - All HSL format */
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 120 100% 75%; /* Bright hacker green */
+
+    --card: 0 0% 3%; /* Very dark for cards */
+    --card-foreground: 120 100% 75%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 120 100% 75%;
+
+    --primary: 120 100% 50%; /* Pure hacker green */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 120 30% 15%; /* Dark green */
+    --secondary-foreground: 120 100% 75%;
+
+    --muted: 120 20% 10%;
+    --muted-foreground: 120 50% 60%;
+
+    --accent: 120 100% 25%;
+    --accent-foreground: 120 100% 75%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 100% 25%;
+    --input: 120 100% 15%;
+    --ring: 120 100% 50%;
+
+    --radius: 0.5rem;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background: #000000;
+    min-height: 100vh;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background: #000000;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  #root {
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
+    z-index: 1;
+  }
+}
+
+/* Custom hacker animations */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 10px theme(colors.primary);
+  }
+  
+  .typing::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+}
+
+/* Matrix background specific styles */
+.matrix-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;
+  background: black !important;
+  display: block !important;
+  pointer-events: none !important;
 }
