@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="text-muted-foreground">
-              © 2024 LetalAndroid - {t('footer.rights')}
+              © { new Date().getFullYear() } Carlos Morán Mauricio - {t('footer.rights')}
             </p>
           </div>
           
