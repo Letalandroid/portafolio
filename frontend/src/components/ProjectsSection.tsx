@@ -70,7 +70,10 @@ const ProjectsSection = () => {
   const fetchProjects = async () => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch(`${import.meta.env.VITE_BACK_URL}/projects`);
+      const response = await fetch(
+        `${(import.meta.env.VITE_APP_BACK_URL =
+          "http://localhost:3000/api/v1")}/projects`
+      );
       if (response.ok) {
         const data = await response.json();
         console.log(data);
