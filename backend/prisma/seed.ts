@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { genHash } from 'src/utils/bcrypt';
 const prisma = new PrismaClient();
 
 async function main() {
@@ -67,6 +68,15 @@ async function main() {
       },
     ],
   });
+
+  await prisma.user.create({
+    data: {
+      name: `${process.env.AUTH_USER?.split('@')[0] || 'Admin'}`,
+      email: `${process.env.AUTH_USER}`,
+      password: `${await genHash(process.env.AUTH_PASS || 'admin123')}`,
+      role: 'ADMIN',
+    },
+  })
 
   console.log('🌱 Seeds cargados correctamente con todos los productos.');
 }
