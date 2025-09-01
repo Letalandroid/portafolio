@@ -32,17 +32,22 @@ export class LoginService {
           token: await this.jwtService.signAsync(
             payload,
           ),
+          user: {
+            id: u.id,
+            email: u.email,
+            name: u.name,
+          }
         };
       } else {
         throw new UnauthorizedException({
           status: 401,
-          message: 'Password incorrect',
+          message: 'Contraseña incorrecta.',
         });
       }
     } else {
       throw new UnauthorizedException({
         status: 401,
-        message: 'User not exists',
+        message: 'Usuario incorrecto.',
       });
     }
   }
