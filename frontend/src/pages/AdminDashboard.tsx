@@ -37,7 +37,7 @@ const AdminDashboard = () => {
   const fetchProjects = async () => {
     try {
       const token = localStorage.getItem('auth_token');
-      const response = await fetch('/api/admin/projects', {
+      const response = await fetch(`${import.meta.env.VITE_APP_BACK_URL}/projects` , {
         headers: {
           'Authorization': `Bearer ${token}`
         }
