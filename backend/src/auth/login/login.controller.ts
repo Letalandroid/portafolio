@@ -14,11 +14,12 @@ export class LoginController {
   @ApiResponse({ status: 200, description: 'Inicio de sesión exitoso.' }) // Respuesta esperada
   @ApiResponse({ status: 401, description: 'Credenciales inválidas.' }) // Respuesta en caso de error
   async login(@Body() user: UserLogin, @Res() res: Response) {
-    const { token } = await this.authService.login(user);
+    const { token, user: u_data } = await this.authService.login(user);
     res.setHeader('Authorization', `Bearer ${token}`);
     return res.status(200).json({
       message: 'Login successful',
-      // token: token,
+      token,
+      user: u_data
     });
   }
 }
