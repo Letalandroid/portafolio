@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const validateToken = async (token: string) => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('/api/auth/validate', {
+      const response = await fetch('/auth/validate', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${import.meta.env.VITE_APP_BACK_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
