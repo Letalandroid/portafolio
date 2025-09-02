@@ -42,12 +42,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const validateToken = async (token: string) => {
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('/auth/validate', {
+      const response = await fetch(`${import.meta.env.VITE_APP_BACK_URL}/auth/validate`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
-      
+
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);

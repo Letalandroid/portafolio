@@ -6,6 +6,7 @@ import { RegisterModule } from './auth/register/register.module';
 import { ConfigModule } from '@nestjs/config';
 import { JwtConfigModule } from './utils/jwt';
 import { ProjectsModule } from './projects/projects.module';
+import { ValidateModule } from './auth/validate/validate.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ProjectsModule } from './projects/projects.module';
     LoginModule,
     RegisterModule,
     ProjectsModule,
+    ValidateModule,
   ],
   controllers: [AppController],
   providers: [AppService],
